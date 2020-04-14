@@ -1,12 +1,17 @@
 package com.imooc.sell.dataobject;
 
 import lombok.Data;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Data
 @Entity
+@DynamicInsert
+@DynamicUpdate
 public class SellerInfo {
     @Id
     private String sellerId;
@@ -14,5 +19,12 @@ public class SellerInfo {
     private String username;
 
     private String password;
+
+    private String openid;
+
+    private Date createTime;
+
+    private Date updateTime;
+
 
 }
